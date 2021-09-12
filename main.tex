@@ -1,0 +1,98 @@
+\documentclass[12pt, letterpaper]{oblivoir}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=1in]{geometry}
+\usepackage{booktabs}
+\usepackage{tabu}
+\usepackage[labelfont=bf,skip=5pt, font=small]{caption}
+\usepackage{subcaption}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\usepackage[style=chem-acs, articletitle=true]{biblatex}
+\addbibresource{references.bib}
+
+\setlength{\parskip}{1em}
+\setlength{\parindent}{0em}
+
+
+
+\begin{document}
+\begin{center}
+    \huge{밥먹고 살기 힘들어요} \\[20pt]
+    \large{박준하} 
+\end{center}
+\rule{\textwidth}{0.5pt}
+\begin{abstract}
+    overleaf 로 논문작성 하기 위한 자료들을 수집하면서 latex을 사용하는 방법을 익힌다 총 5가지 섹션으로 나누려고 한다. 논문 뿐만 아니라 latex를 사용하는 방법은 많이 알려져 있기보다는 대학원 생이 되어야만 배울 수 있는 경우가 많다.  논문 자체를 보는 경우는 흔하지만 그것을 배슷하게 따라해보는경험은 학부 때는 없다고 봐도 무방 한 것 같다. 다양한 자료들도 많고 많지만 정리 해둔사람은 많지 않은 것 같아 도움이 되면 좋겠다는 마음으로 이 latex 참고 문서를 만든다. 가장 기초적인 latex에 대하여 다룰 것이고 고급 기능보다 학부 리포트를 작성하는 부분에 초점이 맞춰져 있다. 총 3가지 세션으로 나뉜다. 1세션에서는 기본적인 latex를 다룰것이며 , 2세션에서는 figure 및 다양한 레퍼런스를 다는것을 연습하고 table 등등을 연습한다 . 3세션에서는 나보다 많이아는 분들의 자료들을 챙겨서 볼 수 있을 정도의 레퍼런스를 다는데 그 의미를 둔다 \cite{hutchinson1993effects}
+\end{abstract}
+\rule{\textwidth}{0.5pt}
+
+\section{introduction}
+\subsection{part 1}
+학부 리포트를 생각해보면 한글 아니면 워드 등등에 글꼴 및 글자 크기등등을 제한하는 교수님들이 있다. 물론 제대로 지켜서 낸적은 없고 그리고 마크다운 파일로 해서 대체적으로 낸적이 많아서 그렇게까지 깊게 해본적이 없다. 생각해보면 그렇게 많은 일도 아니다. \cite{nathan2000investigation}
+
+현실적인 고민이 들어서 굳이 이걸해야하는지 에 대한 의문이 들때가 많다. 워드도 있는데 라는 말보다 latex으로 조밀한 조판과 bibtex를 통해서 논문ref 을 더 빨리 달고 싶었던 마음이 크다. 또한 문서 틀 자체를 항상 어겨가며 쓴 나 자신으로는 내가 틀을 만들어서할 수는 없을까하다가 조판프로그램인 tex 을 써보려고했지만 극악의 난이도를 자랑하기 때문에 할수가 없었다. 
+
+\subsection{part 2}
+수식을 적용해보는 중이다. 다양한 형태의 수식을 편집하는  방법이 있다. 라인안에 아니면 단순 한 글자 아니면 한 줄 전체를 수식을 채우고 수를 통해서 가져오는 형태가 있다.
+
+
+\begin{equation}
+    \sigma = y \cdot \sigma_{ab}  \sqrt{m \cdot a}
+\end{equation}
+이 문서는 대부분 나와 함께 overleaf 유튜브 영상 통해서  다같이 보고있을 거라고 생각하기 때문에 별이야기를 하지 않겠다. See table \ref{tabu:personal_info}
+
+\begin{table}[h] 
+    \centering
+    \caption{this is the personal info of the our groups}
+    \begin{tabu}{*{4}{X[c]}}
+        \toprule
+        \textbf{Names} & \textbf{Age} & \textbf{Height} & \textbf{weight} (kg)  \\
+        \midrule
+        parkjunha & 24 & 172 & 72 \\ 
+        siyun & 25 & 175 &69\\
+        max & 30 & 180 & 70 \\
+        \bottomrule
+    \end{tabu}
+    \label{tabu:personal_info}
+\end{table}
+
+
+대수구조의 느낌을 한번 느껴보자 
+
+\section{Results}
+학부에서 경제학을 공부하면서 학교 내에서 열리는 학회에서 대부분 한글과 엑셀 등등의 난잡하고 미려하지 못한 조판  때문에 화도 났지만 참고문헌을 잘 달지 않는 습관을 bibtex 를 사용하면서 조금은 주석달기 등등 및 논증을 강화하는 기회가 되었던거 같다. 
+
+
+
+\begin{figure}[b]
+    \centering
+    \begin{subfigure}[b]{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{dongguk_logo.jpg}
+        \caption{what}
+        \label{fig:img-1}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{dongguk_logo.jpg}
+        \caption{what}
+        \label{fig:img-2}
+    \end{subfigure}
+    \caption{Two of the image (a) shows some dongguk. (b) is the dongguk. }
+    \label{fig:my_label}
+\end{figure}
+
+
+
+
+
+
+
+
+
+
+
+\printbibliography
+
+\end{document}
